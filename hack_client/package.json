@@ -1,0 +1,31 @@
+{
+  "name": "assainment",
+  "version": "1.0.0",
+  "description": "Html,Css",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Studio",
+    "Assainment"
+  ],
+  "author": "venky",
+  "license": "ISC",
+  "devDependencies": {
+    "broccoli-sass-source-maps": "^2.0.0",
+    "gulp": "^3.9.1",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-sass": "^3.1.0"
+  },
+  "dependencies": {
+    "angular-route": "^1.6.5",
+    "bower": "^1.8.0",
+    "browser-sync": "^2.18.13",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-load-plugins": "^1.5.0",
+    "path": "^0.12.7",
+    "util.log": "0.0.19"
+  }
+}

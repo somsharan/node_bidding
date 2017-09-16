@@ -1,0 +1,130 @@
+<div class="fullwrapper">
+   
+<section class="fullwrapper height100">
+ <aside id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" ng-click="closeNavi()">&times;</a>
+     <span class="logo textCenter"><img src="../assets/images/logo.svg" width="92"/></span>
+     <span class="logo textCenter">{{loggedInUser}}</span>
+     <!--<span class="cart" ng-hide="selleraddcart" data-toggle="modal" data-target="#myModal2" ><img src="../assets/images/cart.png" width="25"/></span>-->
+  <!--<a href="#">Profile</a>-->
+  <a href="/#!/myBidds" ng-show="isSeller">Auction Items</a>
+  <a href="/#!/myBidds" ng-hide="isSeller">My Bids</a>
+  <a href="/#!/viewBidds" >View Bidding</a>
+  <a href="/#!/statistcs"  ng-show="isSeller">Statistcs</a>
+  <a href="/#!/seller" ng-hide="selleraddcart">Seller</a>
+     <a href="/#!/" ng-click="logoutUser()">Logout</a>
+</aside>
+
+<main class="height100" id="main">
+    <span id="open" ng-click="openNavi()">&#9776;</span>
+    
+    <section class="contentSection">
+        
+       <div class="table-responsive">
+    
+        <div class="title textUppercase"  ng-show="isSeller">My Auction Items</div>   
+        <div class="title textUppercase"  ng-hide="isSeller">My Bidds</div>   
+  <table class="table table-hover table-fixed" ng-show="isSeller">
+    <thead class="bgColor">
+      <tr>
+        <th class="bgColor" style="width:16.5%">Chocolate Name</th>
+        <th class="bgColor" style="width:16.5%">Bid Starting Price</th>
+        <th class="bgColor" style="width:16.5%">Current Bidd-Price</th>
+        <th class="bgColor" style="width:16.5%">Date</th>
+        <th class="bgColor" style="width:16.5%">Winner</th>
+        <th class="bgColor" style="width:16.5%">Status</th>
+        <!--<th class="bgColor" style="width:10%">Time</th>-->
+        <!--<th class="bgColor" style="width:10%">Bidd</th>-->
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat = "choc in getMyBids">
+        <td style="width:16.5%">{{choc.chocoName}}</td>
+        <td style="width:16.5%">&#x20B9; {{choc.startingPrice}}</td>
+        <td style="width:16.5%">&#x20B9; {{choc.highBid}}</td>
+        <td style="width:16.5%">{{choc.date | date}}</td>
+        <td style="width:16.5%">{{choc.winnerId?choc.winnerId.userName:'No Winner'}}</td>
+        <td style="width:16.5%">{{choc.active?'Active':'Time Up'}}</td>
+        <!--<td style="width:10%">24Hrs</td>-->
+        <!--<td style="width:10%">   <div class="button"><button type="submit" data-toggle="modal" data-target="#myModal1" class="withback textUppercase paddingTopBottom paddingLeftRight borderRadius">Bid it</button></div></td>-->
+      </tr>
+   
+        
+    </tbody>
+  </table>
+  <table class="table table-hover table-fixed" ng-hide="isSeller">
+    <thead class="bgColor">
+      <tr>
+        <th class="bgColor" style="width:25%">Chocolate Name</th>
+        <th class="bgColor" style="width:25%">Your Bid Price</th>
+        <th class="bgColor" style="width:25%">Current Bidd-Price</th>
+        <th class="bgColor" style="width:25%">Date</th>
+        <!--<th class="bgColor" style="width:10%">Time</th>-->
+        <!--<th class="bgColor" style="width:10%">Bidd</th>-->
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat = "choc in getMyBids">
+        <td style="width:25%">{{choc.chocoName}}</td>
+        <td style="width:25%">&#x20B9; {{choc.myBid}}</td>
+        <td style="width:25%">&#x20B9; {{choc.highBid}}</td>
+        <td style="width:25%">{{choc.date | date}}</td>
+        <!--<td style="width:10%">24Hrs</td>-->
+        <!--<td style="width:10%">   <div class="button"><button type="submit" data-toggle="modal" data-target="#myModal1" class="withback textUppercase paddingTopBottom paddingLeftRight borderRadius">Bid it</button></div></td>-->
+      </tr>
+   
+        
+    </tbody>
+  </table>           
+  </div>
+        
+        
+    </section><!--contentSection-->
+    
+    
+    
+      <div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <span class="modal-title textCenter">Confirm Bidding</span>
+        </div>
+        <div class="modal-body">
+          <form>
+            <span class="inputDefult">
+             <label>Starting Price</label>
+                <span>:-</span> <span class="values">Rs 1000</span>             
+            </span>
+              <span class="inputDefult">
+             <label>Ending Price</label>
+                <span>:-</span> <span class="values">Rs 20000</span>              
+            </span>
+              <span class="inputDefult">
+             <label>Your Price</label>
+                <span>:-</span><input type="number" name="" placeholder="Ex:20000" required="required"/>             
+            </span>
+             
+              <div class="g-recaptcha" data-sitekey="6LczAjAUAAAAAK9g_5IhYijHcqIc54uQhOdzQ4eJ"></div>
+            
+            
+            </form>
+        </div>
+        <div class="modal-footer">
+            
+            <div class="button butomRight textCenter "><button class="cancel textUppercase paddingTopBottom paddingLeftRight borderRadius" data-dismiss="modal">Cancel</button></div>
+            <div class="button butomRight textCenter"><button class="withback textUppercase paddingTopBottom paddingLeftRight borderRadius" type="submit" ng-click="clicked()">Submit</button></div>
+            
+         
+        </div>
+      </div>
+    </div>
+  </div>
+     
+    
+</main>
+</section>
+    
+    
+
+</div>

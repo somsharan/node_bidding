@@ -1,0 +1,58 @@
+<section class="fullwrapper height100">
+  <aside id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" ng-click="closeNavi()">&times;</a>
+     <span class="logo textCenter"><img src="../assets/images/logo.svg" width="92"/></span>
+      <span class="logo textCenter">{{loggedInUser}}</span>
+     <!--<span class="cart" ng-hide="selleraddcart" data-toggle="modal" data-target="#myModal2" ><img src="../assets/images/cart.png" width="25"/></span>-->
+  <!--<a href="#">Profile</a>-->
+  <a href="/#!/myBidds">Auction Items</a>
+  <a href="/#!/viewBidds">View Bidding</a>
+  <a href="/#!/statistcs" class="active">Statistcs</a>
+  <a href="/#!/seller" ng-hide="selleraddcart">Seller</a>
+      <a href="/#!/" ng-click="logoutUser()">Logout</a>
+</aside>
+
+<main class="height100" id="main">
+    <span id="open" ng-click="openNavi()">&#9776;</span>
+    
+    <section class="contentSection">
+        
+       <div class="table-responsive">
+    
+        <div class="title textUppercase">Statistcs</div>   
+ 
+<!--
+           <div id="chart1" class='with-transitions'>
+    <svg></svg>
+</div>
+-->
+        <div>  
+            <fusioncharts 
+                width= "100%"
+                height= "400"
+                type= "column2d"
+                dataFormat= "json"
+                dataSource= "{{dataSource}}">
+            </fusioncharts>
+           </div>
+           <br/>
+           <div>
+             <fusioncharts 
+                width= "100%"
+                height= "400"
+                type= "doughnut2d"
+                dataFormat= "json"
+                dataSource= "{{dataSourceCount}}">
+            </fusioncharts>
+              </div>
+           <br/>   
+        </div>
+        
+    </section><!--contentSection-->
+    
+    
+    
+     
+    
+</main>
+</section>

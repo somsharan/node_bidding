@@ -1,0 +1,31 @@
+{
+  "name": "bower",
+  "description": "Html,Css",
+  "main": "index.js",
+  "authors": [
+    "venky"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "Studio",
+    "Assainment"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.5",
+    "bootstrap": "^3.3.7",
+    "moment": "momentjs#^2.18.1",
+    "socket.io": "^2.0.3"
+  },
+  "resolutions": {
+    "moment": "~2.9.0"
+  }
+}

@@ -1,0 +1,143 @@
+<section class="fullwrapper height100">
+ <aside id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" ng-click="closeNavi()">&times;</a>
+     <span class="logo textCenter"><img src="../assets/images/logo.svg" width="92"/></span>
+     <span class="logo textCenter">{{loggedInUser}}</span>
+     <!--<span class="cart" ng-hide="selleraddcart" data-toggle="modal" data-target="#myModal2" ><img src="../assets/images/cart.png" width="25"/></span>-->
+  <!--<a href="#">Profile</a>-->
+  <a href="/#!/myBidds" ng-hide="selleraddcart">Auction Items</a>
+  <a href="/#!/myBidds" ng-show="selleraddcart">My Bids</a>
+  <a href="/#!/viewBidds" >View Bidding</a>
+  <a href="/#!/statistcs" ng-hide="selleraddcart">Statistcs</a>
+  <a href="/#!/seller" ng-hide="selleraddcart">Seller</a>
+  <a href="/#!/" ng-click="logoutUser()">Logout</a>
+</aside>
+
+<main class="height100" id="main">
+    <span id="open" ng-click="openNavi()">&#9776;</span>
+    
+    <section class="contentSection">
+        
+       <div class="table-responsive">
+    
+        <div class="title textUppercase">View Bidding 
+<!--
+         <span class="marquee">
+          
+             <ul>
+              <li><b>Suggestion : </b></li>
+                  <li><a href="#">#763976</a></li>
+                  <li><a href="#">#763976</a></li>
+                  <li><a href="#">#763976</a></li>
+                  <li><a href="#">#763976</a></li>
+                  <li><a href="#">#763976</a></li>
+                  <li><a href="#">#763976</a></li>
+                  <li><a href="#">#763976</a></li>
+                  <li><a href="#">#763976</a></li>
+                  <li><a href="#">#763976</a></li>
+                  <li><a href="#">#763976</a></li>
+                  <li><a href="#">#763976</a></li>
+                  <li><a href="#">#763976</a></li>
+                 
+             </ul>
+            
+        </span>
+-->
+        </div>   
+  <table class="table table-hover table-fixed">
+    <thead class="bgColor">
+      <tr>
+
+        <th class="bgColor" style="width:25%">Chocolate Name</th>
+        <th class="bgColor" style="width:25%">Starting Price</th>
+        <th class="bgColor" style="width:25%">Current Bid Price</th>
+        <th class="bgColor" style="width:13%">Time</th>
+        <th class="bgColor" ng-hide="isHeSeller" style="width:12%">Bidd</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="choco in getAllChocolates">
+        <td style="width:25%">{{choco.chocoName}}</td>
+        <td style="width:25%">&#x20B9; {{choco.startingPrice}}</td>
+        <td style="width:25%">&#x20B9; {{choco.highBid}}</td>
+        <td style="width:13%"><span class="time_left"><timer end-time="choco.endTime" finish-callback="finished(choco, $index)">{{hours}}:{{minutes}}:{{seconds}} </timer></span></td>
+        <td style="width:12%">   <div class="button"><button type="submit" ng-hide="isHeSeller" ng-disabled="choco.sold" data-toggle="modal" data-target="#myModal1" class="withback textUppercase paddingTopBottom paddingLeftRight borderRadius" ng-click="random($index,choco.startingPrice,choco._id,choco.chocoId,choco.highBid, choco.chocoName)">Bid it</button></div></td>
+      </tr>
+        
+    </tbody>
+  </table>
+  </div>
+        
+        
+    </section><!--contentSection-->
+    
+    
+    
+      <div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <span class="modal-title textCenter">Bidding For {{chocoName}}</span>
+        </div>
+        <div class="modal-body">
+          <form>
+            <!--<span class="inputDefult">
+             <label>Si Price</label>
+                <span>:-</span> <span class="values"> &#x20B9; 1000</span>             
+            </span>-->
+              <span class="inputDefult">
+             <label>Starting Price</label>
+                <span>:-</span> <span class="values" ng-model="bidstartingPrice"> &#x20B9;{{bidstartingPrice}}</span>              
+            </span>
+                <span class="inputDefult">
+             <label>Current Bid Price</label>
+                <span>:-</span> <span class="values" ng-model="biddingRate"> &#x20B9;{{biddingRate}}</span>              
+            </span>
+              <span class="inputDefult">
+             <label>Your Price</label>
+                <span>:-</span><input type="number" name="" ng-model="bidderValue" placeholder="" ng-min={{bidstartingPrice}} required="required"/> 
+                <span ng-if="bidderValue <= biddingRate">Enter greater Bid Value</span>           
+            </span>
+             
+              <!--<div class="g-recaptcha" data-sitekey="6LczAjAUAAAAAK9g_5IhYijHcqIc54uQhOdzQ4eJ"></div>-->
+            
+            
+            </form>
+        </div>
+        <div class="modal-footer">
+            
+            <div class="button butomRight textCenter "><button class="cancel textUppercase paddingTopBottom paddingLeftRight borderRadius" data-dismiss="modal">Cancel</button></div>
+            <div class="button butomRight textCenter"><button class="withback textUppercase paddingTopBottom paddingLeftRight borderRadius" type="submit" ng-click="addBid(bidderValue,auctionId,chocid)" ng-disabled="bidderValue <= biddingRate">Submit</button></div>
+            
+         
+        </div>
+      </div>
+    </div>
+  </div>
+    
+    
+    
+    
+    <div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <span class="modal-title textCenter"><b>Brusunky</b></span>
+        </div>
+        <div class="modal-body">
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </div>
+        <div class="modal-footer">
+             <div class="button textCenter"><button type="submit" class="withback textUppercase paddingTopBottom paddingLeftRight borderRadius"  data-dismiss="modal">ADD to List</button></div>
+            
+         
+        </div>
+      </div>
+    </div>
+  </div>
+     
+    
+</main>
+</section>

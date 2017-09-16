@@ -1,0 +1,61 @@
+<section class="fullwrapper height100">
+    <aside id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" ng-click="closeNavi()">&times;</a>
+        <span class="logo textCenter"><img src="../assets/images/logo.svg" width="92"/></span>
+        <span class="logo textCenter">{{loggedInUser}}</span>
+        <!--<span class="cart" ng-hide="selleraddcart" data-toggle="modal" data-target="#myModal2" ><img src="../assets/images/cart.png" width="25"/></span>-->
+        <!--<a href="#">Profile</a>-->
+        <a href="/#!/myBidds">Auction Items</a>
+        <a href="/#!/viewBidds" >View Bidding</a>
+        <a href="/#!/statistcs">Statistcs</a>
+        <a href="/#!/seller">Seller</a>
+        <a href="/#!/" ng-click="logoutUser()">Logout</a>
+    </aside>
+
+    <main class="height100" id="main">
+        <span id="open" ng-click="openNavi()">&#9776;</span>
+
+        <section class="contentSection">
+
+            <div class="boxWrapper">
+
+                <div class="boxContent">
+
+                    <div class="selectSeller paddingDefult borderRadius">
+                        <span class="logo textCenter"><img src="./assets/images/logo.svg" width="120" alt=""></span>
+                        <br/>
+                        <h4 style="text-align:center">Add Acution Item</h4>
+                        <br/>
+                        <form>
+                            <select ng-model="chocId">
+                                <option ng-repeat="choc in chocholate" value="{{$index}}">{{choc.cName}}</option> 
+                                <!-- ng-options="item.ID as item.Name for item in User" -->
+                            </select>
+                             <select ng-model="suggestedPrice">
+                                <option ng-repeat="item in suggestedPriceList" value="{{item}}">{{item}}</option> 
+                                <!-- ng-options="item.ID as item.Name for item in User" -->
+                            </select>
+<!--                            <input type="text" ng-model="suggestedPrice" value=""  />-->
+
+                            <div class="button textCenter"><button type="submit" ng-click="addAuction(chocId)" class="withback textUppercase paddingTopBottom paddingLeftRight borderRadius">SUBMIT</button></div>
+
+                        </form>
+
+                    </div>
+                    <!--selectSeller-->
+
+
+                </div>
+                <!--boxContent-->
+
+            </div>
+            <!--boxWrapper-->
+
+
+        </section>
+        <!--contentSection-->
+
+
+
+    </main>
+</section>

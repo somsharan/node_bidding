@@ -1,0 +1,451 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html,body{
+      background-color: #ECE8D5;
+    background-image: url(../images/chocolateWallper.jpg);
+    background-size: cover;
+    color: #abb5ba;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+    font-family: 'Libre Franklin', sans-serif;
+}
+ul{
+        list-style: inside;
+}
+ul li{
+    
+        margin: 8px 0;
+}
+a,a:hover,
+a:focus{
+    text-decoration: none;
+}
+
+button:hover,
+button:focus{
+    
+    border: none;
+    outline: 0;
+}
+input:hover,
+input:focus,
+select:hover,
+select:focus{
+    border: 1px solid #47341E;
+    outline: 0;
+    box-shadow: 0 0 4px #ccc
+}
+p{
+    text-align: justify;
+    margin: 8px 0
+}
+h1{
+    font-size: 24px;
+    text-align: center
+}
+.fullwrapper{
+    width: 100%;
+    float: left;
+   
+}
+
+.bold{
+    font-weight:500;
+}
+.paddingDefult{
+    padding: 15px
+}
+.floatLeft{
+    float: left
+}
+.paddingLeftRight{
+      padding-left:15px;
+     padding-right:15px;
+}
+.paddingTopBottom{
+      padding-top: 8px;
+    padding-bottom: 8px;
+}
+.floatRight{
+    float: right
+}
+.textCenter{
+    text-align: center;
+}
+
+.width100{
+    width: 100%;
+}
+.width65{
+    width: 65%;
+}
+.width50{
+    width: 50%
+}
+
+.width30{
+    width: 30%
+}
+.width25{
+    width: 25%
+}
+.width20{
+    width: 20%
+}
+.height100{
+    height: 100%;
+}
+
+.marginTopBottom15{
+    margin: 15px 0;
+}
+
+.greyColor,
+.active a,
+a:hover{
+    color: #ece8d5
+    
+}
+.greyColor,
+a{
+    color: #ece8d5;
+}
+.textUppercase{
+    text-transform: uppercase;
+}
+
+.navList li{
+     display: inline-block;
+    padding: 2px 6px
+}
+
+header{
+    display: inline-block;
+    width: 100%;
+    position: fixed;
+    box-shadow: 0 0 4px #CCC;
+    background-color: #fff;
+    z-index: 2
+}
+.logo{
+       margin: 4px 0 14px 0;
+    display: block;
+}
+
+.borderRadius{
+    border-radius: 4px;
+}
+
+.boxWrapper{
+        width: 400px;
+    margin: 0 auto;
+    position: relative;
+    display: table;
+    height: 100%;
+}
+.boxContent{
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+}
+.login{
+      background-color: #fff;
+    width: 100%;
+    border-radius: 3px;
+        padding-top: 15px;
+    padding-bottom: 45px;
+    box-shadow: 0 0 6px #ccc;
+}
+.login input,
+select,
+input{
+        width: 100%;
+    border: 1px solid #ccc;
+    padding: 11px 15px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    color: #000;
+}
+.button{}
+button.withback{
+     background: #BAB68B !important;
+     color: #fff !important;
+    border: 1px solid #BAB68B !important
+}
+.button button{
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid #fff
+}
+.button button:hover,
+.button button.active{
+    
+}
+button.cancel{
+    background-color: transparent;
+    color: #BAB68B;
+    border: 1px solid #BAB68B
+}
+.splashScreen{
+    background-color: rgba(0, 0, 0, .3);
+
+}
+.regster span{
+       color: #fff;
+    margin: 0 0 15px 0;
+    display: inline-block;
+}
+
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+.inputDefult{
+        display: inline-block;
+    width: 100%;
+}
+.inputDefult label{
+    font-weight: normal;
+    width: 40%;
+    float: left;
+     margin: 8px 0% 0 0;
+}
+.inputDefult input,
+.inputDefult select{
+    width: 55%;
+     border: 1px solid #ccc;
+    padding: 8px 15px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    color: #000;
+}
+.inputDefult span{
+        margin: 8px 3% 0 0;
+    float: left;
+}
+.butomRight {
+    width: 100%;
+    display: inline;
+}
+
+.fullwrapper .sidenav {
+    height: 100%;
+    width: 136px ;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .7);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 15px;
+}
+aside .logo{
+    margin-bottom: 30px;
+
+}
+.sidenav a:first-child {
+    border-bottom: none;
+}
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 12px;
+    color: #818181;
+    display: block;
+        border-bottom: 1px solid #292929;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+.contentSection{
+    position: absolute;
+    width: 88%;
+    height: 95%;
+   
+    overflow-y: scroll;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+    margin-left: 136px;
+}
+.fullwrapper .closebtn,
+.fullwrapper #open{
+    display: none;
+}
+#open{
+    
+    font-size: 26px;
+    color: #fff;
+    
+}
+.table-fixed thead {
+  width: 100%;
+}
+.table-fixed tbody {
+ 
+  overflow-y: auto;
+  width: 100%;
+}
+.table-fixed thead, .table-fixed tbody, .table-fixed tr, .table-fixed td, .table-fixed th {
+  display: block;
+}
+.table-fixed tbody td, .table-fixed thead > tr> th {
+  float: left;
+  border-bottom-width: 0;
+}
+.table-responsive{
+  
+}
+thead{
+        height: 60px;
+}
+.table{
+      background-color: #fff;
+}
+.table > thead > tr > th{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: none;
+    font-weight: normal;
+}
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{
+    vertical-align: middle;
+}
+.title{
+        background-color: rgba(0, 0, 0, .7);
+    padding: 10px 8px;
+    color: #fff;
+    float: left;
+    width: 100%;
+}
+.bgColor{
+    background-color: #f9f9f9;
+}
+#chart1{
+    background-color: #fff;
+        float: left;
+    width: 100%;
+}
+
+.marquee {
+    width: 87%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    animation: marquee 30s linear infinite;
+    display: inline-block;
+    position: relative;
+    top: 3px;
+}
+
+.marquee:hover {
+    animation-play-state: paused
+}
+
+/* Make it move */
+@keyframes marquee {
+    0%   { text-indent: 27.5em }
+    100% { text-indent: -105em }
+}
+
+
+
+.marquee ul{
+    margin: 0;
+}
+.marquee ul li{
+    display: inline;
+    font-size: 10px;
+    padding: 0 10px;
+    border-right:1px solid #fff; 
+}
+.marquee ul li:last-child{
+    border: none;
+}
+.marquee ul li:hover{
+    border-bottom: 1px solid #fff;
+}
+.selectSeller{
+        background-color: #fff;
+  
+}
+.selectSeller select,
+.selectSeller input{
+    width: 49%
+}
+.cart{
+        float: right;
+    position: relative;
+    top: -25px;
+    right: 15px;
+}
+
+@media screen and  (max-width : 767px){
+    
+    .boxWrapper{
+            width: 87%;
+    }
+    .inputDefult label{
+        width: 100%;
+    }
+    .inputDefult span{
+        display: none;
+    }
+    .inputDefult input{
+        width: 100%
+    }
+    .fullwrapper .sidenav{
+        width: 0;
+    }
+    .fullwrapper .closebtn, 
+    .fullwrapper #open{
+        display: block;
+    }
+    #main{
+        margin-left: 0;
+    }
+    .title{
+        width: 600px;
+    overflow: scroll;
+    }
+    .table-responsive > .table{
+            width: 600px;
+    overflow: scroll;
+    }
+    #open{
+            display: block;
+    position: absolute;
+    right: 29px;
+    z-index: 9;
+    }
+}
