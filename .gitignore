@@ -2,3 +2,6 @@
 hack_server/node_modules
 hack_client/node_modules
 hack_client/bower_components
+bidding_server/node_modules
+bidding_client/node_modules
+bidding_client/bower_components
